@@ -4,7 +4,7 @@ node {
   }
   
   stage('Build Docker image') {
-    sh 'docker build -t selenium-image .'
+    sh 'docker build -t Dockerfile .'
   }
   
   stage('Run Selenium script in Docker container') {
