@@ -1,7 +1,8 @@
 from selenium import webdriver
+from webdriver_manager.firefox import GeckoDriverManager
 
-# create a new Firefox browser instance
-browser = webdriver.Firefox()
+# Use webdriver-manager to manage the geckodriver
+browser = webdriver.Firefox(executable_path=GeckoDriverManager().install())
 
 # navigate to the Google website
 browser.get("https://www.google.com")
