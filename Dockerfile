@@ -13,6 +13,11 @@ RUN apk add --no-cache --update \
     && pip install --no-cache-dir -r requirements.txt \
     && apk del build-dependencies
 
+RUN google-chrome --version
+
+RUN chromedriver --version
+
+
 COPY sample.py .
 
 CMD ["python", "sample.py"]
