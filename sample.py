@@ -7,7 +7,7 @@ from selenium.webdriver.firefox.service import Service as FirefoxService
 from webdriver_manager.firefox import GeckoDriverManager
 
 # Create a temporary directory to store the logs
-log_directory = /home/ubuntu/
+log_directory = "/home/ubuntu/"
 
 # Set the log path
 log_path = os.path.join(log_directory, "geckodriver.log")
