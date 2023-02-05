@@ -21,6 +21,8 @@ USER myuser
 # Run chromedriver command as non-root user
 RUN chromedriver --version
 
+RUN chromium-browser --version
+
 COPY sample.py .
 
 CMD ["python", "sample.py"]
