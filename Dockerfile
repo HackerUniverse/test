@@ -1,11 +1,13 @@
 
-USER root
 
 FROM python:3.8-alpine
 
 WORKDIR /app
 
 COPY requirements.txt .
+
+USER root
+
 
 # Install Mozilla Firefox
 RUN apk add --no-cache --update \
