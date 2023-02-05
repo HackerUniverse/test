@@ -1,18 +1,34 @@
+import os
 from selenium import webdriver
+from selenium.webdriver.firefox.service import Service as FirefoxService
 from webdriver_manager.firefox import GeckoDriverManager
+from selenium.webdriver.firefox.options import Options
 
-# Use webdriver-manager to manage the geckodriver
+# setting the firefox options
+options = Options()
+options.headless = True
+
+# setting the path for geckodriver log
+log_path = "/tmp/geckodriver.log"
+
+# installing geckodriver
 executable_path = GeckoDriverManager().install()
-log_path = '/tmp/geckodriver.log'
-browser = webdriver.Firefox(executable_path=executable_path, service_log_path=log_path)
 
+try:
+    with open(log_path, "w") as log_file:
+        pass
+except PermissionError:
+    log_path = None
 
-# navigate to the Google website
-browser.get("https://www.google.com")
+# creating the firefox service
+service = FirefoxService(executable_path, log_file=log_path)
 
-# get the source code of the page and print it
-source_code = browser.page_source
-print(source_code)
+# creating the firefox driver
+driver = webdriver.Firefox(service=service, options=options)
 
-# close the browser
-browser.quit()
+# performing a sample action with the driver
+driver.get("https://www.google.com/")
+print(driver.title)
+
+# closing the driver
+driver.quit()
