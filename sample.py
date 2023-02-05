@@ -1,7 +1,7 @@
 from selenium import webdriver
 
-# create a new Chrome browser instance
-browser = webdriver.Chrome()
+# create a new Firefox browser instance
+browser = webdriver.Firefox()
 
 # navigate to the Google website
 browser.get("https://www.google.com")
