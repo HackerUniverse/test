@@ -2,7 +2,7 @@ from selenium import webdriver
 from selenium.webdriver.firefox.options import Options
 
 options = webdriver.FirefoxOptions()
-options.binary_location = '/usr/bin/firefox'
+options.binary_location = '/usr/lib/firefox'
 browser = webdriver.Firefox(options=options)
 
 # navigate to the Google website
