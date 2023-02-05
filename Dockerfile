@@ -6,7 +6,7 @@ COPY requirements.txt .
 
 # Install Mozilla Firefox
 RUN apk add --no-cache --update \
-    firefox-esr \
+    firefox \
     && apk add --no-cache --update --virtual build-dependencies \
     build-base \
     python3-dev \
