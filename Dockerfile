@@ -19,6 +19,9 @@ RUN wget https://github.com/mozilla/geckodriver/releases/download/v0.32.1/geckod
     && rm geckodriver-v0.32.1-linux64.tar.gz \
     && mv geckodriver /usr/local/bin/
 
+RUN mkdir -p /usr/lib/firefox
+&& ln -s /usr/bin/firefox-esr /usr/lib/firefox/firefox
+
 
 # Run geckodriver command as non-root user
 RUN geckodriver --version
