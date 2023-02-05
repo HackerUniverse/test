@@ -8,6 +8,6 @@ node {
   }
   
   stage('Run Selenium script in Docker container') {
-   sh 'docker run --rm selenium-image python sample.py'
+  sudo sh 'docker run --rm selenium-image python sample.py'
   }
 }
