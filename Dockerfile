@@ -7,7 +7,7 @@ COPY sample.py /app/sample.py
 USER root
 
 # Install required packages for the script
-RUN apt-get install update && apt-get install -y python3
+RUN apt-get update && apt-get install -y python3
 
 
 
