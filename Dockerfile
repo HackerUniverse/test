@@ -19,10 +19,6 @@ RUN wget https://github.com/mozilla/geckodriver/releases/download/v0.32.1/geckod
     && rm geckodriver-v0.32.1-linux64.tar.gz \
     && mv geckodriver /usr/local/bin/
 
-# Create a non-root user
-RUN adduser -D myuser
-
-USER myuser
 
 # Run geckodriver command as non-root user
 RUN geckodriver --version
