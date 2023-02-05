@@ -7,11 +7,9 @@ options.binary_location = '/usr/bin/firefox'
 browser = webdriver.Firefox(options=options)
 
 # navigate to the Google website
-browser.get("https://www.tmforum.org/about-tm-forum/contact-us/")
+p = browser.get("https://www.tmforum.org/about-tm-forum/contact-us/")
 
-# get the source code of the page and print it
-source_code = browser.title
-print(source_code)
+print(p)
 
 # close the browser
 browser.quit()
