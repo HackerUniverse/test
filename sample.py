@@ -2,6 +2,7 @@ from selenium import webdriver
 from selenium.webdriver.firefox.options import Options
 
 options = webdriver.FirefoxOptions()
+options.add_argument('--headless')
 options.binary_location = '/usr/bin/firefox'
 browser = webdriver.Firefox(options=options)
 
