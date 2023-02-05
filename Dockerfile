@@ -13,7 +13,8 @@ RUN apk add --no-cache --update \
     && pip install --no-cache-dir -r requirements.txt \
     && apk del build-dependencies
 
-RUN google-chrome --version
+RUN chromium-browser --version.
+
 
 RUN chromedriver --version
 
