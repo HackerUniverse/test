@@ -4,10 +4,10 @@ WORKDIR /app
 
 COPY requirements.txt .
 
-# Install a specific version of Chrome and Chromedriver
+# Install a specific version of Firefox and GeckoDriver
 RUN apk add --no-cache --update \
-    chromium=109.0.5414.74-r0 \
-    chromium-chromedriver=109.0.5414.74-r0 \
+    firefox \
+    geckodriver \
     && apk add --no-cache --update --virtual build-dependencies \
     build-base \
     python3-dev \
@@ -19,8 +19,8 @@ RUN adduser -D myuser
 
 USER myuser
 
-# Run chromedriver command as non-root user
-RUN chromedriver --version
+# Run GeckoDriver command as non-root user
+RUN geckodriver --version
 
 COPY sample.py .
 
