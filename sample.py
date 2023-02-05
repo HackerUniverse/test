@@ -10,7 +10,7 @@ browser = webdriver.Firefox(options=options)
 browser.get("https://www.tmforum.org/about-tm-forum/contact-us/")
 
 # get the source code of the page and print it
-source_code = browser.page_source
+source_code = browser.title
 print(source_code)
 
 # close the browser
