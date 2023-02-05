@@ -4,10 +4,10 @@ node {
   }
   
   stage('Build Docker image') {
-    sh 'docker build -t selenium-image .'
+   sudo sh 'docker build -t selenium-image .'
   }
   
   stage('Run Selenium script in Docker container') {
-    sh 'docker run -it --rm selenium-image python sample.py'
+   sudo sh 'docker run -it --rm selenium-image python sample.py'
   }
 }
