@@ -1,7 +1,9 @@
 from selenium import webdriver
+from selenium.webdriver.firefox.options import Options
 
-# create a new Firefox browser instance
-browser = webdriver.Firefox()
+options = webdriver.FirefoxOptions()
+options.binary_location = '/usr/bin/firefox'
+browser = webdriver.Firefox(options=options)
 
 # navigate to the Google website
 browser.get("https://www.google.com")
