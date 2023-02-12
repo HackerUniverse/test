@@ -23,7 +23,7 @@ RUN pip3 install selenium
 
 RUN pip install selenium-wire
 
-
+RUN chmod +x /usr/bin/chromedriver
 
 # Set the working directory to the app directory
 WORKDIR /app/
