@@ -1,11 +1,9 @@
 from seleniumwire import webdriver
-from selenium.webdriver.chrome.service import Service
 
 chrome_options = webdriver.ChromeOptions()
 chrome_options.add_argument('--no-sandbox')
 chrome_options.add_argument('--headless')
-s=Service('/usr/bin/chromedriver')
-driver = webdriver.Chrome(service=s, options=chrome_options)
+driver = webdriver.Chrome(executable_path='/usr/bin/chromedriver', options=chrome_options)
 # Go to the Google home page
 driver.get('https://example.com')
 
