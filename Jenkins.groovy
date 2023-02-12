@@ -8,7 +8,7 @@ node {
   }
   
   stage('Run Selenium script in Docker container') {
-   sh 'docker run --rm selenium-image python sample.py'
+   sh 'docker run --rm selenium-image python3 sample.py'
   }
   
   stage('Teardown') {
