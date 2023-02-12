@@ -35,6 +35,8 @@ RUN netstat -nptln
 
 RUN whereis chromium
 
+RUN snap install chromium
+
 RUN whereis chromedriver
 
 RUN chromedriver --version
