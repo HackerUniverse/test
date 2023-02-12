@@ -16,7 +16,7 @@ RUN apt install chromium-chromedriver
 # Install Python
 RUN apt-get install -y python3
 
-RUN apt install python3-pip
+RUN apt install -y python3-pip
 
 # Install the latest version of Selenium
 RUN pip3 install selenium
