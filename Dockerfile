@@ -4,7 +4,7 @@ FROM ubuntu:latest
 
 
 # Update the package repository and install required packages
-RUN apt-get update && apt-get install -y wget net-tools
+RUN apt-get update && apt-get install -y wget net-tools libnss3 libdl2 libpthread0 libglib2.0-0 libnss3 libnssutil3 libnspr4 libm6 libxcb1 libgcc1 libc6 libpcre3 libplc4 libplds4 libxau6 libxdmcp6 libbsd0 libmd0
 
 # Install Chromium using 
 RUN apt install chromium-browser -y
