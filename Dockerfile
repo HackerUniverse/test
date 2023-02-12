@@ -8,12 +8,16 @@ RUN apt-get update && apt-get install -y wget net-tools snapd libnss3 libglib2.0
 # Install Chromium using 
 RUN apt install chromium -y
 
+RUN apt-get install -y unzip
 
-# Install Chromium using 
-RUN apt install chromium-chromedriver -y
+RUN wget https://chromedriver.storage.googleapis.com/110.0.5481.77/chromedriver_linux64.zip
+
+RUN unzip chromedriver_linux64.zip
+
+RUN mv chromedriver /usr/bin/
 
 # Install Python
-RUN apt-get install -y python3
+RUN apt-get install -y python3 
 
 RUN apt install -y python3-pip
 
