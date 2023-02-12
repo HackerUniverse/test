@@ -5,16 +5,9 @@ FROM debian:latest
 # Update the package repository and install required packages
 RUN apt-get update && apt-get install -y wget net-tools snapd libnss3 libglib2.0-0 libnss3 libnspr4 libxcb1 libgcc1 libc6 libpcre3 libxau6 libxdmcp6 libbsd0 libmd0
 
+
 # Install Chromium using 
 RUN apt install chromium -y
-
-RUN apt-get install -y unzip
-
-RUN wget https://chromedriver.storage.googleapis.com/110.0.5481.77/chromedriver_linux64.zip
-
-RUN unzip chromedriver_linux64.zip
-
-RUN mv chromedriver /usr/bin/
 
 # Install Python
 RUN apt-get install -y python3 
@@ -25,6 +18,16 @@ RUN apt install -y python3-pip
 RUN pip3 install selenium
 
 RUN pip install selenium-wire
+
+
+RUN apt-get install -y unzip
+
+RUN wget https://chromedriver.storage.googleapis.com/110.0.5481.77/chromedriver_linux64.zip
+
+RUN unzip chromedriver_linux64.zip
+
+RUN mv chromedriver /usr/bin/
+
 
 RUN chmod +x /usr/bin/chromedriver
 
