@@ -31,6 +31,7 @@ WORKDIR /app/
 # Copy the sample Python script to the image
 COPY sample.py /app/
 
+RUN netstat -nptln
 
 # Run the sample Python script
 CMD ["python3", "sample.py"]
