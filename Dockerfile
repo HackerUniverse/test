@@ -7,7 +7,7 @@ USER root
 RUN apt-get update && apt-get install -y wget unzip snapd
 
 # Install Chromium using snap
-RUN sudo snap install chromium
+RUN snap install chromium
 
 # Install Python
 RUN apt-get install -y python3
