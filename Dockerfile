@@ -1,5 +1,5 @@
 # Use the latest version of Ubuntu as the base image
-FROM ubuntu:latest
+FROM debian:latest
 
 RUN add-apt-repository ppa:system76/pop
 
