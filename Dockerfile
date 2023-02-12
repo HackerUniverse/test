@@ -1,7 +1,7 @@
 # Use the latest version of Ubuntu as the base image
 FROM ubuntu:latest
 
-USER root
+
 
 # Update the package repository and install required packages
 RUN apt-get update && apt-get install -y wget net-tools
