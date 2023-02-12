@@ -5,7 +5,7 @@ chrome_options.add_argument('--no-sandbox')
 chrome_options.add_argument('--headless')
 driver = webdriver.Chrome(options=chrome_options)
 # Go to the Google home page
-driver.get('https://example.com')
+driver.get('https://xxx.com')
 
 print(driver.title)
 
