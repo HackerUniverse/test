@@ -1,11 +1,13 @@
 # Use the latest version of Ubuntu as the base image
 FROM ubuntu:latest
 
+USER root
+
 # Update the package repository and install required packages
 RUN apt-get update && apt-get install -y wget unzip snapd
 
 # Install Chromium using snap
-RUN snap install chromium
+RUN sudo snap install chromium
 
 # Install Python
 RUN apt-get install -y python3
