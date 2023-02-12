@@ -7,11 +7,11 @@ USER root
 RUN apt-get update && apt-get install -y wget net-tools
 
 # Install Chromium using 
-RUN apt install chromium-browser
+RUN apt install chromium-browser -y
 
 
 # Install Chromium using 
-RUN apt install chromium-chromedriver
+RUN apt install chromium-chromedriver -y
 
 # Install Python
 RUN apt-get install -y python3
