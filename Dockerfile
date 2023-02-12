@@ -37,5 +37,11 @@ RUN whereis chromium
 
 RUN whereis chromedriver
 
+RUN chromedriver --version
+
+RUN chromedriver --version
+
+RUN chromium --version
+
 # Run the sample Python script
 CMD ["python3", "sample.py"]
