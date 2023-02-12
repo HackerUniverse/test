@@ -4,7 +4,7 @@ FROM ubuntu:latest
 USER root
 
 # Update the package repository and install required packages
-RUN apt-get update && apt-get install -y wget unzip net-tools
+RUN apt-get update && apt-get install -y wget net-tools
 
 # Install Chromium using 
 RUN apt install chromium-browser
