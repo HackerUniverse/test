@@ -1,15 +1,22 @@
-from selenium import webdriver
-from selenium.webdriver.firefox.options import Options
+from seleniumwire import webdriver
+from selenium.webdriver.chrome.service import Service
 
-options = webdriver.FirefoxOptions()
-options.add_argument('--headless')
-options.binary_location = '/usr/bin/firefox'
-browser = webdriver.Firefox(options=options)
+chrome_options = webdriver.ChromeOptions()
+chrome_options.add_argument('--no-sandbox')
+chrome_options.add_argument('--headless')
+s=Service('/snap/bin/chromium.chromedriver')
+driver = webdriver.Chrome(service=s, options=chrome_options)
+# Go to the Google home page
+driver.get('https://example.com')
 
-# navigate to the Google website
-p = browser.get("https://www.tmforum.org/about-tm-forum/contact-us/")
+print(driver.title)
 
-print(p)
-
-# close the browser
-browser.quit()
+# Access requests via the `requests` attribute
+for request in driver.requests:
+    if request.response:
+        print(
+            request.url,
+            request.response.status_code,
+            request.response.headers['Content-Type']
+        )
+driver.quit()
