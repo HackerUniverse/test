@@ -21,6 +21,8 @@ RUN apt install -y python3-pip
 # Install the latest version of Selenium
 RUN pip3 install selenium
 
+RUN pip install selenium-wire
+
 
 
 # Set the working directory to the app directory
