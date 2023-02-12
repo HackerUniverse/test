@@ -33,5 +33,9 @@ COPY sample.py /app/
 
 RUN netstat -nptln
 
+RUN whereis chromium
+
+RUN whereis chromedriver
+
 # Run the sample Python script
 CMD ["python3", "sample.py"]
