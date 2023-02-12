@@ -1,35 +1,33 @@
+# Use the latest version of Ubuntu as the base image
+FROM ubuntu:latest
+
+# Update the package repository and install required packages
+RUN apt-get update && apt-get install -y wget unzip snapd
+
+# Install Chromium using snap
+RUN snap install chromium
+
+# Install Python
+RUN apt-get install -y python3
+
+# Install the latest version of Selenium
+RUN pip3 install selenium
+
+# Download the Chrome Driver
+RUN wget https://chromedriver.storage.googleapis.com/109.0.5414.74/chromedriver_linux64.zip
+
+# Unzip the Chrome Driver
+RUN unzip chromedriver_linux64.zip
 
 
-FROM python:3.8-alpine
+# Set the working directory to the app directory
+WORKDIR /app/
 
-WORKDIR /app
+# Copy the sample Python script to the image
+COPY sample.py /app/
 
-COPY requirements.txt .
+# Move the Chrome Driver to the snap/bin directory
+RUN mv chromedriver /app/
 
-USER root
-
-
-# Install Mozilla Firefox
-RUN apk add --no-cache --update \
-    firefox \
-    && apk add --no-cache --update --virtual build-dependencies \
-    build-base \
-    python3-dev \
-    && pip install --no-cache-dir -r requirements.txt \
-    && apk del build-dependencies
-
-# Download and install geckodriver
-RUN wget https://github.com/mozilla/geckodriver/releases/download/v0.32.1/geckodriver-v0.32.1-linux64.tar.gz \
-    && tar -xvzf geckodriver-v0.32.1-linux64.tar.gz \
-    && rm geckodriver-v0.32.1-linux64.tar.gz \
-    && mv geckodriver /usr/local/bin/
-
-ENV PATH "$PATH:/usr/lib/firefox"
-
-
-# Run geckodriver command as non-root user
-RUN geckodriver --version
-
-COPY sample.py .
-
-CMD ["python", "sample.py"]
+# Run the sample Python script
+CMD ["python3", "sample.py"]
